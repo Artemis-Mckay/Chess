@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Xadrez;
+namespace Chess;
 
 public class CasaVazia : Pecas
 {
@@ -23,7 +23,7 @@ public class CasaVazia : Pecas
         
         try
         {
-            string path = Path.Combine($@"{disk}:\Users\", Environment.UserName, "Xadrez", "bin", "Debug", "imagens", $"{nome}.png"); // Se estiver dando erro, edite o valor da variável 'disk' para "D"
+            string path = Path.Combine($@"{disk}:\Users\", Environment.UserName, "Chess", "bin", "Debug", "imagens", $"{nome}.png"); // Se estiver dando erro, edite o valor da variável 'disk' para "D"
             // MessageBox.Show("Tentando carregar: " + path);
             pictureBox.Image = Image.FromFile(path);
         }
@@ -36,5 +36,10 @@ public class CasaVazia : Pecas
     public override bool MovimentoValido(int LinhaDestino, int ColunaDestino, Pecas pecaDestino)
     {
         return true;
+    }
+
+    public override bool Xeque(Pecas rei, Pecas pecaAtacante, Pecas[,] tb)
+    {
+        return false;
     }
 }

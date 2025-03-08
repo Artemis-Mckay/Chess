@@ -1,4 +1,4 @@
-namespace Xadrez;
+namespace Chess;
 
 static class Program
 {

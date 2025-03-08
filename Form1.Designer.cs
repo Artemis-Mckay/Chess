@@ -1,7 +1,7 @@
 ﻿using System.CodeDom;
 using System.Diagnostics;
 
-namespace Xadrez;
+namespace Chess;
 
 partial class Form1 : Form
 {
@@ -10,8 +10,8 @@ partial class Form1 : Form
     /// </summary>
     private System.ComponentModel.IContainer components = null;
 
-    private const int TamanhoDaMatriz = 8;
-    private Button[,] matriz = new Button[TamanhoDaMatriz, TamanhoDaMatriz];
+    // private const int TamanhoDaMatriz = 8;
+    // private Button[,] matriz = new Button[TamanhoDaMatriz, TamanhoDaMatriz];
 
     /// <summary>
     ///  Clean up any resources being used.
@@ -37,7 +37,7 @@ partial class Form1 : Form
         this.components = new System.ComponentModel.Container();
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
         this.ClientSize = new System.Drawing.Size(350, 350);
-        this.Text = "Xadrez";
+        this.Text = "Chess";
         this.AutoSize = true;
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedDialog;

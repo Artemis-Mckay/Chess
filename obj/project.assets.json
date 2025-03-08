@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\McKay\\Xadrez\\Xadrez.csproj",
+      "projectUniqueName": "C:\\Users\\McKay\\Chess\\Xadrez.csproj",
       "projectName": "Xadrez",
-      "projectPath": "C:\\Users\\McKay\\Xadrez\\Xadrez.csproj",
+      "projectPath": "C:\\Users\\McKay\\Chess\\Xadrez.csproj",
       "packagesPath": "C:\\Users\\McKay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\McKay\\Xadrez\\obj\\",
+      "outputPath": "C:\\Users\\McKay\\Chess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
