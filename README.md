@@ -4,7 +4,7 @@ Instalation/Usage:
 ```bash
 cd $HOME
 git clone https://github.com/Artemis-McKay/Chess.git
-cd Xadrez
+cd Chess
 dotnet run
 ```
 
