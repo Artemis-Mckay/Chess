@@ -21,7 +21,7 @@ public partial class Form1 : Form
     public Form1()
     {
         tabuleiro = tb.Matriz;
-
+        
         try
         {
             tb.InicializarTabuleiro(this);
@@ -32,15 +32,18 @@ public partial class Form1 : Form
         }
 
         InitializeComponent();
+        MessageBox.Show($"{Application.StartupPath}");
     }
 
     public void ClickNoTabuleiro(Pecas peca)
     {
         Pecas pecaRei;
+        peca.CountC(peca.coluna);
+        peca.line = peca.revertLine(peca.line);
 
         if (origemX == -1 && origemY == -1) // Primeiro clique: seleciona a peça
         {
-            MessageBox.Show($"Peça selecionada: {peca.GetType().Name}");
+            MessageBox.Show($"Peça selecionada: {peca.GetType().Name} {peca.c}{peca.line}");
             if (peca is not CasaVazia)
             {
                 pecaSelecionada = peca.pictureBox;
@@ -80,7 +83,7 @@ public partial class Form1 : Form
             __mv = true;
             vez_das_brancas = !vez_das_brancas;
 
-            MessageBox.Show($"Peça destino: {pecaDestino.GetType().Name}");
+            MessageBox.Show($"Peça destino: {pecaDestino.GetType().Name} {pecaDestino.c}{pecaDestino.line}");
 
             if (peca.linha == origemX && peca.coluna == origemY)
             {
@@ -150,7 +153,7 @@ public partial class Form1 : Form
 
 
 
-                if (canXeque(pecaOrigem.Xeque(pecaRei, pecaOrigem, this.tb.Matriz) && ((tabuleiro[pecaRei.linha + 2, pecaRei.coluna - 2] is CasaVazia && tabuleiro[pecaRei.linha + 1, pecaRei.coluna - 1] is CasaVazia) || (tabuleiro[pecaRei.linha + 1, pecaRei.coluna] is CasaVazia) && (tabuleiro[pecaRei.linha + 2, pecaRei.coluna + 2] is CasaVazia || tabuleiro[pecaRei.linha + 1, pecaRei.coluna + 1] is CasaVazia))))
+                if (canXeque(pecaOrigem.Xeque(pecaRei, pecaOrigem, this.tabuleiro) && ((tabuleiro[pecaRei.linha + 2, pecaRei.coluna - 2] is CasaVazia && tabuleiro[pecaRei.linha + 1, pecaRei.coluna - 1] is CasaVazia) || (tabuleiro[pecaRei.linha + 1, pecaRei.coluna] is CasaVazia) && (tabuleiro[pecaRei.linha + 2, pecaRei.coluna + 2] is CasaVazia || tabuleiro[pecaRei.linha + 1, pecaRei.coluna + 1] is CasaVazia))))
                 {
                     MessageBox.Show($"Xeque");
                 }

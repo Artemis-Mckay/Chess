@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\McKay\\Chess\\Xadrez.csproj",
-      "projectName": "Xadrez",
-      "projectPath": "C:\\Users\\McKay\\Chess\\Xadrez.csproj",
+      "projectUniqueName": "C:\\Users\\McKay\\Chess\\Chess.csproj",
+      "projectName": "Chess",
+      "projectPath": "C:\\Users\\McKay\\Chess\\Chess.csproj",
       "packagesPath": "C:\\Users\\McKay\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\McKay\\Chess\\obj\\",
       "projectStyle": "PackageReference",

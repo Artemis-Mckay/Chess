@@ -1,35 +1,58 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 namespace Chess;
 
-public abstract class Pecas : Form
+public abstract class Pecas : Form, ICount
 {
-    protected string disk { get; private set; } = "C";
-    public string cor;
-    public int linha;
-    public int coluna;
+    public string cor { get; protected set; } = "cor" ?? string.Empty; // precaução para que não seja null
+    internal int linha { get; set; }
+    internal int coluna { get; set; }
+    public int line { get; set; }
 
     public PictureBox pictureBox = new PictureBox();
 
-    public char[]? characterColumn { get; set; }
-    protected int line;
-    protected int column;
+    public char[]? characterColumn { get; set; } = new char[1] ?? null;
+    public char c { get; private set; }
 
-    List<char> _column_chars_list = new List<char>();
-
-    public Pecas() {}
+    public Pecas() { }
     public Pecas(string Cor, int Linha, int Coluna)
     {
         cor = Cor;
         linha = Linha;
         coluna = Coluna;
-        line = linha + 1;
-        column = coluna + 1;
+        line = Linha;
     }
     public abstract bool MovimentoValido(int linhaDestino, int colunaDestino, Pecas pecaDestino);
 
     public abstract bool Xeque(Pecas rei, Pecas pecaAtacante, Pecas[,] tabuleiro);
+
+    public void CountC(int c)
+    {
+        characterColumn = new char[8]
+        {
+            'a',
+            'b',
+            'c',
+            'd',
+            'e',
+            'f',
+            'g',
+            'h',
+        };
+
+        if (c >= 0 && c <= 8)
+        {
+            this.c = characterColumn[c];
+        }
+    }
+
+    public int revertLine(int l)
+    {
+        if (l < 0 || l > 7) return -1;
+        return 7 - l + 1;
+    }
 }

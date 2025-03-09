@@ -1,9 +1,10 @@
-﻿using System.CodeDom;
+using System.CodeDom;
 using System.Diagnostics;
+using System.Security.Cryptography;
 
 namespace Chess;
 
-partial class Form1 : Form
+public partial class Form1
 {
     /// <summary>
     ///  Required designer variable.
@@ -41,31 +42,6 @@ partial class Form1 : Form
         this.AutoSize = true;
         this.MaximizeBox = false;
         this.FormBorderStyle = FormBorderStyle.FixedDialog;
-        
-        // for (int linha = 0; linha < TamanhoDaMatriz; linha++)
-        // {
-        //     for (int coluna = 0; coluna < TamanhoDaMatriz; coluna++)
-        //     {
-        //         Button b = new Button();
-        //         if ((coluna + linha) % 2 == 0)
-        //         {
-        //             b.Size = new Size(50, 50);
-        //             b.Location = new Point(50 * linha, 50 * coluna);
-        //             b.BackColor = Color.White;
-        //             matriz[linha, coluna] = b;
-        //             this.Controls.Add(b);
-        //         }
-        //         else
-        //         {
-        //             b.Size = new Size(50, 50);
-        //             b.Location = new Point(50 * linha, 50 * coluna);
-        //             b.BackColor = Color.Black;
-        //             matriz[linha, coluna] = b;
-        //         }
-
-        //         this.Controls.Add(b);
-        //     }
-        // }
     }
     #endregion
 }
